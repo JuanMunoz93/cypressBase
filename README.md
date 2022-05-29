@@ -1,3 +1,4 @@
+Dashboard: https://dashboard.cypress.io/
 Cypress commands:
 
 Launch cypress GUI:
@@ -5,8 +6,13 @@ Launch cypress GUI:
 -npm run cypress:open
 
 Execute tests:
--npm run cy:run --spec "cypress/integration/tests/loginTestsNoGherkin.spec.js"
--npm run cy:run -- --record --key dfe585c1-5202-45f2-b554-1862ffa6e119 --spec "cypress/integration/tests/loginTestsNoGherkin.spec.js"
+-npm run cypress:runSpecificFile
+-npm run cypress:runSavingInPlatform
+-npm run cypress:smokeTest
+-npm run cypress:noSmoke
+-npm run cypress:login
+-npm run cypress:loginAlt
+
 
 Additional libraries:
 -cypress-cucumber-preprocessor

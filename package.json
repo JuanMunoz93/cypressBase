@@ -6,7 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open",
-    "cy:run": "cypress run"
+    "cypress:run": "cypress run",
+    "cypress:runSpecificFile": "cypress run --spec \"cypress/integration/tests/loginTestsNoGherkin.spec.js\"",
+    "cypress:runSavingInPlatform": "cypress run --record --key dfe585c1-5202-45f2-b554-1862ffa6e119 --spec \"cypress/integration/tests/loginTestsNoGherkin.spec.js\"",
+    "cypress:smokeTest": "npx cypress-tags run --record --tag \"smokeTest,login\" --key dfe585c1-5202-45f2-b554-1862ffa6e119 -e TAGS=\"@smokeTest\"",
+    "cypress:login": "npx cypress-tags run --record --tag \"login\" --key dfe585c1-5202-45f2-b554-1862ffa6e119 -e TAGS=\"@login\"",
+    "cypress:loginAlt": "npx cypress-tags run --record --tag \"alternativePath,login\" --key dfe585c1-5202-45f2-b554-1862ffa6e119 -e TAGS=\"@alternativePath\"",
+    "cypress:noSmoke": "npx cypress-tags run --record --tag \"login\" --key dfe585c1-5202-45f2-b554-1862ffa6e119 -e TAGS=\"@login and not @smokeTest\""
   },
 
   "cypress-cucumber-preprocessor": {
