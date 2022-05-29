@@ -10,15 +10,21 @@
     "cypress:runSpecificFile": "cypress run --spec \"cypress/integration/tests/loginTestsNoGherkin.spec.js\"",
     "cypress:runSavingInPlatform": "cypress run --record --key dfe585c1-5202-45f2-b554-1862ffa6e119 --spec \"cypress/integration/tests/loginTestsNoGherkin.spec.js\"",
     "cypress:smokeTest": "npx cypress-tags run --record --tag \"smokeTest,login\" --key dfe585c1-5202-45f2-b554-1862ffa6e119 -e TAGS=\"@smokeTest\"",
+    "cypress:smokeTest2": "npx cypress-tags run -e TAGS=\"@smokeTest\"",
     "cypress:login": "npx cypress-tags run --record --tag \"login\" --key dfe585c1-5202-45f2-b554-1862ffa6e119 -e TAGS=\"@login\"",
     "cypress:loginAlt": "npx cypress-tags run --record --tag \"alternativePath,login\" --key dfe585c1-5202-45f2-b554-1862ffa6e119 -e TAGS=\"@alternativePath\"",
+    "cypress:loginAlt2": "npx cypress-tags run -e TAGS=\"@alternativePath\"",
     "cypress:noSmoke": "npx cypress-tags run --record --tag \"login\" --key dfe585c1-5202-45f2-b554-1862ffa6e119 -e TAGS=\"@login and not @smokeTest\""
   },
-
   "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions": true
- },
-
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JuanMunoz93/cypressBase.git"
@@ -31,6 +37,7 @@
   "homepage": "https://github.com/JuanMunoz93/cypressBase#readme",
   "devDependencies": {
     "cypress": "^9.7.0",
-    "cypress-cucumber-preprocessor": "^4.3.1"
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "multiple-cucumber-html-reporter": "^1.21.1"
   }
 }

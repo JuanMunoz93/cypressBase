@@ -13,6 +13,10 @@ Execute tests:
 -npm run cypress:login
 -npm run cypress:loginAlt
 
+Generate html report:
+-node cucumber-html-report.js
 
 Additional libraries:
 -cypress-cucumber-preprocessor
+-multiple-cucumber-html-reporter
+
