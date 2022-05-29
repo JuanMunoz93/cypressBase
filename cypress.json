@@ -1,1 +1,5 @@
-{}
+{
+    "projectId":"tgmoue",
+    "chromeWebSecurity": false,
+    "testFiles": "**/*.{feature,features,spec.js}"
+}

@@ -1,0 +1,10 @@
+module.exports={
+    "validLogin":{
+        "user":"standard_user", 
+        "password":"secret_sauce"
+      },
+    "lockedLogin":{
+        "user":"locked_out_user", 
+        "password":"secret_sauce"
+      }
+}

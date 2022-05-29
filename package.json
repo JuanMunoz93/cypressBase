@@ -4,8 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open",
+    "cy:run": "cypress run"
   },
+
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+ },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JuanMunoz93/cypressBase.git"
@@ -17,6 +24,7 @@
   },
   "homepage": "https://github.com/JuanMunoz93/cypressBase#readme",
   "devDependencies": {
-    "cypress": "^9.5.3"
+    "cypress": "^9.7.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
   }
 }
