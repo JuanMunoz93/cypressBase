@@ -43,6 +43,7 @@ workflows:
   cypressTestExe:
     jobs:
       - cypress/run:
+          command: npm run cypress:smokeTest
           executor: with-chrome
           browser: chrome
 
