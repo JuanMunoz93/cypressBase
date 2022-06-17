@@ -36,8 +36,6 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
-      - cypress/run:
-          component: true
   cypressTestExe:
     jobs:
       - cypress/run:
