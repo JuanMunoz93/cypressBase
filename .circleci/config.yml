@@ -45,5 +45,4 @@ workflows:
       - cypress/run:
           executor: with-chrome
           browser: chrome
-          parallel: true
 
