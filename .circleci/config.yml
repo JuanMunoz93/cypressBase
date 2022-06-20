@@ -46,4 +46,6 @@ workflows:
           command: npm run cypress:smokeTest
           executor: with-chrome
           browser: chrome
-
+          post-steps:
+            - run: node cucumber-html-report.js
+      
