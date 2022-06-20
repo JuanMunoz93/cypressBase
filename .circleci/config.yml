@@ -23,7 +23,8 @@ executors:
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:      
   customTest:
-    when: << pipeline.parameters.custom_test >> != ""
+    #when: << pipeline.parameters.custom_test >> != ""
+    when: ${{ if noe(variables['pipeline.parameters.custom_test'], '') }}
     jobs:
       - cypress/run:
           command: npm run cypress:<< pipeline.parameters.custom_test >>
