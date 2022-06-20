@@ -48,6 +48,5 @@ workflows:
           browser: chrome
           post-steps:
             - run: node cucumber-html-report.js
-            - store_test_results:
+            - store_artifacts:
                 path: reports
-      
