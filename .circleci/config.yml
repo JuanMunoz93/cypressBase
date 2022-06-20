@@ -2,13 +2,7 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 parameters:
-  run_smoke_test:
-    type: boolean
-    default: false
-  run_alternative_test:
-    type: boolean
-    default: false
-  custom_test:
+  test_command:
     type: string
     default: "smokeTest2"
 
@@ -25,29 +19,7 @@ workflows:
   customTest:
     jobs:
       - cypress/run:
-          command: npm run cypress:<< pipeline.parameters.custom_test >>
-          executor: with-chrome
-          browser: chrome
-          post-steps:
-            - run: node cucumber-html-report.js
-            - store_artifacts:
-                path: reports
-  smokeTest:
-    when: << pipeline.parameters.run_smoke_test >>
-    jobs:
-      - cypress/run:
-          command: npm run cypress:smokeTest2
-          executor: with-chrome
-          browser: chrome
-          post-steps:
-            - run: node cucumber-html-report.js
-            - store_artifacts:
-                path: reports
-  alternativeTest:
-    when: << pipeline.parameters.run_alternative_test >>
-    jobs:
-      - cypress/run:
-          command: npm run cypress:smokeTest2
+          command: npm run cypress:<< pipeline.parameters.test_command >>
           executor: with-chrome
           browser: chrome
           post-steps:
