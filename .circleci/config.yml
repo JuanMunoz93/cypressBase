@@ -2,15 +2,11 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 orbs:
-  node: circleci/node@4.7.0
   cypress: cypress-io/cypress@2.0.0
 executors:
   with-chrome:
     docker:
       - image: 'cypress/browsers:node14.16.0-chrome90-ff88'
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
-
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
