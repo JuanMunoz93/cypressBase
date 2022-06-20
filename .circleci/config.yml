@@ -49,5 +49,5 @@ workflows:
           post-steps:
             - run: node cucumber-html-report.js
             - store_test_results:
-                path: cypress/results
+                path: reports
       
