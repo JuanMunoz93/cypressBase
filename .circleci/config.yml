@@ -5,6 +5,9 @@ parameters:
   run_smoke_test:
     type: boolean
     default: false
+  run_alternative_test:
+    type: boolean
+    default: false
 
 orbs:
   cypress: cypress-io/cypress@2.0.0
@@ -16,11 +19,22 @@ executors:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:      
-  cypressTestExe:
+  smokeTest:
     when: << pipeline.parameters.run_smoke_test >>
     jobs:
       - cypress/run:
           command: npm run cypress:smokeTest2
+          executor: with-chrome
+          browser: chrome
+          post-steps:
+            - run: node cucumber-html-report.js
+            - store_artifacts:
+                path: reports
+  alternativeTest:
+    when: << pipeline.parameters.run_alternative_test >>
+    jobs:
+      - cypress/run:
+          command: npm run cypress:loginAlt2
           executor: with-chrome
           browser: chrome
           post-steps:
